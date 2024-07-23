@@ -9,7 +9,8 @@
         <script src="https://cdn.tailwindcss.com"></script>
         <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.12.3/dist/cdn.min.js"></script>
         <title>{% block title %}Le blog de ma passion{% endblock %}</title>
-
+        <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
+        
         {% block head_styles %}  {% endblock head_styles %}
         {% block head_scripts %} {% endblock head_scripts %}
     </head>

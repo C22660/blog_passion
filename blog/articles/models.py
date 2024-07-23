@@ -21,7 +21,7 @@ class Article(models.Model):
     content = models.TextField(_("contenu"), blank=True)
     image = models.ImageField(
         _("Image de l'article"),
-        upload_to="article/images/activity",
+        upload_to="article/images/articles",
         blank=True,
         null=True,
     )
