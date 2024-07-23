@@ -1,0 +1,38 @@
+{% load static %}
+{% load i18n %}
+<!DOCTYPE html>
+<html lang="fr">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.12.3/dist/cdn.min.js"></script>
+        <title>{% block title %}Le blog de ma passion{% endblock %}</title>
+
+        {% block head_styles %}  {% endblock head_styles %}
+        {% block head_scripts %} {% endblock head_scripts %}
+    </head>
+
+    <body  class="h-full bg-slate-50">
+
+        <header>
+            {% block nav %}{% include 'fragments/nav_bar.html' %}{% endblock nav %}
+            {% block headers %}  {% endblock headers %}
+        </header>
+
+        <main>
+            {% block content %}  {% endblock content%}
+        </main>
+
+        <footer>
+            {% block footer %} {% endblock footer %}
+        </footer>
+
+        {% block modals %}  {% endblock modals %}
+
+        {% block bottom_scripts %}  {% endblock bottom_scripts %}
+
+
+    </body>
+</html>
