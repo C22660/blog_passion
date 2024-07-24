@@ -12,7 +12,31 @@ from django.views.generic import (
 )
 
 from blog.events.models import Event
+from blog.events.forms import CreationEventForm
 
+# To create an article
+class CreationEventView(CreateView):
+    model = Event
+    template_name = "events/create_event.html"
+    form_class = CreationEventForm
+    success_url = reverse_lazy("events:all-events")
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["title_part"] = _("Création")
+        context["submit_text"] = _("créer")
+        return context
+
+    def form_valid(self, form):
+        if self.request.user.is_authenticated:
+            form.instance.author = self.request.user
+            
+        if form.cleaned_data.get("published"):
+            form.instance.published_on = date.today()
+
+        return super().form_valid(form)
+
+creation_event_view = CreationEventView.as_view()
 
 
 # To display the articles.
