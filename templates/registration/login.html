@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% load i18n %}
+{% load crispy_forms_tags %}
+
+{% block title %}{% translate "Connection" %}{% endblock title %} 
+
+{% block content %}
+<section class="text-center flex justify-center max-w-7xl mx-auto pt-36 md:pt-10 px-4 sm:px-6 lg:px-8">
+  <div class=" relative bg-sky-50 min-h-[450px] w-80 flex flex-col shadow-md ring-1 ring-slate-300 border border-slate-200 rounded-lg mt-7 mx-4 px-2 py-2 text-left">
+    <div class="text-center">
+      <h1 class="text-4xl font-bold text-slate-900"> {% translate "Connexion" %}</h1>
+      <hr class="w-1/4 mt-3 mx-auto border-violet-300">
+    </div>
+    
+    <form class="mt-2" method="post">
+      {% csrf_token %}
+      <div class="text-center mt-8">
+      {{ form }}
+            {% comment %} <a class="" {% endcomment %}
+            {% comment %} href="{% url 'account_reset_password' %}">{% translate "Forgot Password?" %}</a> {% endcomment %}
+      <button class="inline-block justify-center  mt-8 px-2 py-1 md:ml-2 rounded-lg shadow-lg bg-red-300 hover:bg-red-200 focus:outline-none focus:shadow-outline text-xs text-white uppercase tracking-widest font-semibold"
+       type="submit">{% translate "Se connecter" %}</button>
+      </div>
+    </form>
+
+  </div>
+</section>
+{% endblock content %}

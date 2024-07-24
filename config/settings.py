@@ -134,7 +134,15 @@ MEDIA_ROOT = BASE_DIR / "media"
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
+# Custom user authentication
 AUTH_USER_MODEL = "users.User"
+# To redirect user if is not recognised
+LOGIN_URL = "articles:all-articles"
+# If user is recognised,
+LOGIN_REDIRECT_URL = "articles:all-articles"
+# and if logout
+LOGOUT_REDIRECT_URL = "articles:all-articles"
+
 
 CRISPY_ALLOWED_TEMPLATE_PACKS = "tailwind"
 CRISPY_TEMPLATE_PACK = "tailwind"
