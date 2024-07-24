@@ -80,3 +80,23 @@ class UpdateArticleView(UpdateView):
 
 
 update_article_view = UpdateArticleView.as_view()
+
+# To delete an article
+class DeleteArticleView(DeleteView):
+    model = Article
+    template_name = "articles/confirmation_delete.html"
+    context_object_name = "element"
+    success_url = reverse_lazy("articles:all-articles")
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["title_subject"] = "un article"
+        context["question"] = (
+            f"""Voulez-vous supprimer l'article "{ context["element"].title }" ? """
+        )
+        previous_page = self.request.META.get("HTTP_REFERER", "/")
+        context["previous_page"] = previous_page
+        return context
+
+
+delete_article_view = DeleteArticleView.as_view()
