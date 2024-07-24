@@ -28,26 +28,27 @@
     class="flex flex-col md:flex md:pt-0 
     md:flex-row md:space-x-10 md:w-auto md:items-center md:justify-center">
 
-    <li class="py-2 text-center border-t border-slate-200 md:border-0">
-        <a 
-        href="#param"
-        class="p-2 text-slate-50 text-lg font-medium hover:bg-violet-300 hover:rounded-lg"
-        >Contact</a>
-    </li>
 
     <li class="py-2 text-center border-t border-slate-200 md:border-0">
       <a 
-      href="#admin"
+      href="{% url 'articles:all-articles' %}"
       class="p-2 text-slate-50 text-lg font-medium hover:bg-violet-300 hover:rounded-lg"
       >Articles</a>
     </li>
 
     <li class="py-2 text-center border-t border-slate-200 md:border-0">
       <a 
-      href="#param"
+      href="{% url 'events:all-events' %}"
       class="p-2 text-slate-50 text-lg font-medium hover:bg-violet-300 hover:rounded-lg"
       >Evénements</a>
     </li>
+
+    <li class="py-2 text-center border-t border-slate-200 md:border-0">
+      <a 
+      href="#param"
+      class="p-2 text-slate-50 text-lg font-medium hover:bg-violet-300 hover:rounded-lg"
+      >Contact</a>
+  </li>
 
   </ul>
 
