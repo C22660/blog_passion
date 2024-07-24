@@ -16,11 +16,9 @@
     <form class="mt-2" method="post">
       {% csrf_token %}
       <div class="text-center mt-8">
-      {{ form }}
-            {% comment %} <a class="" {% endcomment %}
-            {% comment %} href="{% url 'account_reset_password' %}">{% translate "Forgot Password?" %}</a> {% endcomment %}
-      <button class="inline-block justify-center  mt-8 px-2 py-1 md:ml-2 rounded-lg shadow-lg bg-red-300 hover:bg-red-200 focus:outline-none focus:shadow-outline text-xs text-white uppercase tracking-widest font-semibold"
-       type="submit">{% translate "Se connecter" %}</button>
+          {{ form }}
+          <button class="inline-block justify-center  mt-8 px-2 py-1 md:ml-2 rounded-lg shadow-lg bg-red-300 hover:bg-red-200 focus:outline-none focus:shadow-outline text-xs text-white uppercase tracking-widest font-semibold"
+        type="submit">{% translate "Se connecter" %}</button>
       </div>
     </form>
 
