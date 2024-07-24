@@ -81,3 +81,23 @@ class UpdateEventView(UpdateView):
 
 
 update_event_view = UpdateEventView.as_view()
+
+# To delete an event
+class DeleteEventView(DeleteView):
+    model = Event
+    template_name = "events/confirmation_delete.html"
+    context_object_name = "element"
+    success_url = reverse_lazy("events:all-events")
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["title_subject"] = "un événement"
+        context["question"] = (
+            f"""Voulez-vous supprimer l'événement "{ context["element"].title }" ? """
+        )
+        previous_page = self.request.META.get("HTTP_REFERER", "/")
+        context["previous_page"] = previous_page
+        return context
+
+
+delete_event_view = DeleteEventView.as_view()
