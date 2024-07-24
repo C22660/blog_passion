@@ -1,0 +1,32 @@
+{% extends 'base.html' %} 
+{% load static %}
+
+{% block title %}Supprimer {{ title_subject }}{% endblock title %} 
+
+
+{% block content %}
+
+<section class="text-center max-w-7xl mx-auto pt-36 md:pt-10 px-4 sm:px-6 lg:px-8">
+
+<div " bg-sky-50 shadow-md ring-1 ring-zinc-300 border border-t-gray-200 rounded-lg mt-7 mx-4 px-2 py-2 text-left">
+    <div class="mt-16 mb-16 flex flex-col items-center mx-auto">
+
+        <div>
+            <img class=""
+            src="{% static 'images/warning.png' %}"
+            alt="picto warning" 
+            >
+        </div>
+        <form method="POST">
+            {% csrf_token %}
+            <p class="text-center"> {{ question }} </p>
+            <button class="inline-block w-32 mt-2 md:mt-5 px-2 py-1 ml-2 rounded-lg shadow-lg bg-red-300 hover:bg-red-200 focus:outline-none focus:shadow-outline text-xs text-white uppercase tracking-widest font-semibold"
+             type="submit">Supprimer</button>
+            <a href="{{ previous_page }}"><button class="inline-block w-32 mt-2 md:mt-5 px-2 py-1 ml-2 rounded-lg shadow-lg bg-teal-300 hover:bg-teal-200 focus:outline-none focus:shadow-outline text-xs text-white uppercase tracking-widest font-semibold"
+                type="button">Retour</button></a>
+        </form>
+    </div>
+
+</div>
+</section>
+{% endblock content %} 
