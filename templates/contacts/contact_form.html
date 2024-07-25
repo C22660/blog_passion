@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% load crispy_forms_tags %}
+
+
+{% block content %}
+<section class="text-center max-w-7xl mx-auto pt-36 pb-10 md:pt-10 px-4 sm:px-6 lg:px-8">
+
+
+    <div>
+    <h1 class="text-4xl font-bold text-gray-900 ">{% translate "Contactez-nous " %}</h1>
+    <hr class="w-1/4 mt-5 mx-auto border-slate-900">
+    </div>
+
+    <div class=" bg-sky-50 shadow-md ring-1 ring-zinc-300 border border-t-gray-200 rounded-lg mt-7 mx-4 px-2 py-2 text-left">
+        <form method="post">
+            {% csrf_token %}
+            {{ form|crispy  }}
+            <div class="mt-3 mb-3 text-center">
+                <button class="px-5 py-3 rounded-lg shadow-lg bg-sky-300 hover:bg-teal-300 focus:outline-none focus:shadow-outline text-sm text-white uppercase tracking-wider font-semibold" 
+                type="submit">{% translate "Envoyer" %}</button>
+            <div>
+        </form>
+    </div>
+</section>
+{% endblock content %}
