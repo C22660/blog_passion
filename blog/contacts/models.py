@@ -30,7 +30,7 @@ class Contact(models.Model):
         unique=True,
     )
     content = models.TextField(_("message"), blank=False)
-    reason = models.CharField(max_length=15, choices = CHOICES)
+    reason = models.CharField(_("motif"), max_length=15, choices = CHOICES)
     created_at = models.DateTimeField(auto_now_add=True)
 
     class Meta:
