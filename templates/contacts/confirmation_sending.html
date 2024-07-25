@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block title %}{% translate "Message envoyé :" %}{% endblock title %} 
+
+{% block content %}
+<section class="text-center flex justify-center max-w-7xl mx-auto pt-16 md:pt-10 px-4 sm:px-6 lg:px-8">
+
+    <div class="bg-sky-50 shadow-md ring-1 w-80 h-40 ring-zinc-300 border border-t-gray-200 rounded-lg mt-7 mx-4 px-2 py-2 flex justify-center items-center ">
+        <p class="italic text-xl tracking-wide underline decoration-sky-500">{% translate "Merci pour votre message !" %}</p>
+    <div>
+</section>
+
+{% endblock content %}
