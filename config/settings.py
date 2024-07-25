@@ -54,6 +54,7 @@ INSTALLED_APPS = [
     "blog.articles",
     "blog.users",
     "blog.events",
+    "blog.contacts",
 ]
 
 MIDDLEWARE = [
