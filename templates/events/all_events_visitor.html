@@ -1,0 +1,64 @@
+{% load i18n %}
+
+
+
+  <!-- Les évènements -->
+  
+  <div class="mt-8 flex flex-wrap justify-center items-center flex-col  md:flex-row">
+
+      <!-- un évènement -->
+    {% for event in all_events %}
+
+    {% if event.published %}
+    
+      <div class="relative bg-sky-50 min-h-[450px] w-80 flex flex-col shadow-md ring-1 ring-slate-300 border border-slate-200 rounded-lg mt-7 mx-4 px-2 py-2 text-left">
+        
+        <!-- 1 L'image' -->
+        {% if event.image %}
+        <div>
+          <img class="mt6 rounded-lg shadow-xl h-44 w-full object-cover object-center"
+            src="{{ event.image.url }}"
+            alt="image de l'activité {{ event.title }}"
+          />
+        </div>
+
+        {% endif %}
+
+        <!-- 2 Le détail -->
+        <div class="px-2">
+          <div class="relative">
+            <h2 class="mt-3 text-2xl font-bold text-slate-900"> {{ event.title }}</h2>
+
+          </div>
+
+            <h3 class="mt-3 text-1xl font-semibold text-slate-900">{% translate "Description :" %} </h3>
+            <p class="mt-1 text-slate-600 leading-tight line-clamp-2 hover:line-clamp-none">{{ event.content }}</p>
+            
+
+            {% if event.date_begin %}  
+            <h3 class="mt-3 text-1xl font-semibold text-slate-900 ">{% translate "Début de l'événement :" %}
+              <span class="text-slate-600"> {{ event.date_begin }}</span>
+            </h3>
+            {% endif %}
+
+            {% if event.date_finish %}  
+            <h3 class="mt-3 text-1xl font-semibold text-slate-900 ">{% translate "Fin de l'événement :" %}
+              <span class="text-slate-600"> {{ event.date_finish }}</span>
+            </h3>
+            {% endif %}
+
+            <h3 class="mt-3 text-1xl font-semibold text-slate-900 ">{% translate "Publié le  :" %}
+              <span class="text-slate-600">{{ event.published_on }}</span>
+            </h3>
+        </div>
+      </div>
+    {% endif %}
+
+      
+    {% empty %}
+        <div class=" bg-sky-50 min-w-fit flex flex-col shadow-md ring-1 ring-slate-300 border border-slate-200 rounded-lg mt-7 mx-4 px-2 py-2 text-left">
+            <p class="pt-2 px-2 text-center">{% translate "Désolé, aucun événement n'est encore planifié." %}</p>
+        </div>
+    {% endfor %}
+
+  </div>
