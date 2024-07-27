@@ -12,6 +12,7 @@ crispy-tailwind = "*"
 django-environ = "*"
 djangorestframework = "*"
 django-filter = "*"
+djangorestframework-simplejwt = "*"
 
 [dev-packages]
 
