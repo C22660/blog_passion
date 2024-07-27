@@ -10,9 +10,3 @@ class ArticleViewset(ModelViewSet):
  
     def get_queryset(self):
         return Article.objects.all()
-
-    # Pour pouvoir faire un update partiel
-    # https://tech.serhatteker.com/post/2020-09/enable-partial-update-drf/
-    # def update(self, request, *args, **kwargs):
-    #     kwargs['partial'] = True
-    #     return super().update(request, *args, **kwargs)
