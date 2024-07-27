@@ -14,7 +14,8 @@ class ArticleDetailSerializer(ModelSerializer):
         # être explicite.
         fields = '__all__'
 
-    def validate_title(self, value):
-        if Article.objects.filter(title=value).exists():
-            raise serializers.ValidationError('Article already exists')
-        return value
+    # def validate_title(self, value):
+    #     if Article.objects.filter(title=value).exists():
+    #         if not self.request.method == 'PUT':
+    #             raise serializers.ValidationError('Article already exists')
+    #     return value
