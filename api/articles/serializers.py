@@ -8,6 +8,10 @@ class ArticleDetailSerializer(ModelSerializer):
     """Serializer for the Article model wich display the list of articles
     with all elements."""
 
+    author = serializers.HiddenField(
+    default=serializers.CurrentUserDefault()
+    )
+
     class Meta:
         model = Article
         # Normalement tous les champs par défaut, mais ajout de _all_ pour
