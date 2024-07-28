@@ -4,9 +4,15 @@ from rest_framework.decorators import api_view
 from rest_framework.decorators import api_view, permission_classes
 from rest_framework.permissions import IsAdminUser
 
+from drf_yasg.utils import swagger_auto_schema
+
 from api.users.serializers import UserSerializer
 
-
+@swagger_auto_schema(
+    method='post',
+    operation_description="Create a user (limited access)",
+    response={200: UserSerializer}
+    )
 @api_view(['POST', ])
 @permission_classes([IsAdminUser])
 def signup_view(request):
