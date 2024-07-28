@@ -52,6 +52,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'rest_framework_simplejwt',
     'django_filters',
+    'drf_yasg',
     "crispy_forms",
     "crispy_tailwind",
     "blog.articles",
@@ -173,4 +174,10 @@ REST_FRAMEWORK = {
     'PAGE_SIZE': 10,
     'DEFAULT_FILTER_BACKENDS': ['django_filters.rest_framework.DjangoFilterBackend'],
     'DEFAULT_AUTHENTICATION_CLASSES': ('rest_framework_simplejwt.authentication.JWTAuthentication',)
+}
+
+# Suite installation drf-yasg
+SWAGGER_SETTINGS = {
+    'LOGIN_URL': 'users:login',
+    'LOGOUT_URL': 'users:logout'
 }
