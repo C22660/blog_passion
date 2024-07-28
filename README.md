@@ -2,7 +2,7 @@
 <img class=""
     src="./static/images/plume.png" 
     alt="logo_plume" 
-    width="600" 
+    width="50" 
 />
 </p>
 
