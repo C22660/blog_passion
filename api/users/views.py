@@ -1,11 +1,14 @@
 from rest_framework import status
 from rest_framework.response import Response
 from rest_framework.decorators import api_view
+from rest_framework.decorators import api_view, permission_classes
+from rest_framework.permissions import IsAdminUser
 
 from api.users.serializers import UserSerializer
 
 
 @api_view(['POST', ])
+@permission_classes([IsAdminUser])
 def signup_view(request):
 
     if request.method == 'POST':
