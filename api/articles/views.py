@@ -37,18 +37,18 @@ class ArticleViewset(ModelViewSet):
     filterset_fields = ['published']
     permission_classes = [IsAuthenticated, ArticleAdministrationPermissions]
 
+    def get_queryset(self):
+        return Article.objects.all()
+
+    def perform_create(self, serializer):
+        serializer.save(author=self.request.user)
+
     @swagger_auto_schema(
         operation_description="Display the list of articles",
         responses={200: 'ArticleDetailSerializer'}
         )
     def list(self):
         return super().list(self)
-
-    def get_queryset(self):
-        return Article.objects.all()
-
-    def perform_create(self, serializer):
-        serializer.save(author=self.request.user)
 
     @swagger_auto_schema(
         operation_description="Display the detail of an article ", 
