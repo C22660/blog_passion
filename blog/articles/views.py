@@ -42,7 +42,6 @@ creation_article_view = CreationArticleView.as_view()
 class ArticleListView(ListView):
     model = Article
     context_object_name = "all_articles"
-    ordering = ["published_on"]
     template_name = "articles/all_articles.html"
 
     def get_queryset(self):

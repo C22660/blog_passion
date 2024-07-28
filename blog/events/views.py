@@ -43,7 +43,6 @@ creation_event_view = CreationEventView.as_view()
 class EventListView(ListView):
     model = Event
     context_object_name = "all_events"
-    ordering = ["published_on"]
     template_name = "events/all_events.html"
 
     def get_queryset(self):
