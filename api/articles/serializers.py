@@ -8,9 +8,7 @@ class ArticleDetailSerializer(ModelSerializer):
     """Serializer for the Article model wich display the list of articles
     with all elements."""
 
-    author = serializers.HiddenField(
-    default=serializers.CurrentUserDefault()
-    )
+    author = serializers.CharField(source='author.username', read_only=True)
 
     class Meta:
         model = Article

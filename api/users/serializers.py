@@ -17,7 +17,7 @@ class UserSerializer(ModelSerializer):
         extra_kwargs = {
             'password': {'write_only': True}
         }
-
+        
     # pour s'assurer que password et passorwd2 matchent, on overwrite 
     # la méthode save
     def save(self):
