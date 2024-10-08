@@ -26,7 +26,9 @@ class Migration(migrations.Migration):
                         verbose_name="ID",
                     ),
                 ),
-                ("title", models.CharField(max_length=200, verbose_name="titre")),
+                ("title", models.CharField(max_length=200,
+                                           verbose_name="titre")
+                 ),
                 (
                     "slug",
                     django_extensions.db.fields.AutoSlugField(
@@ -37,7 +39,8 @@ class Migration(migrations.Migration):
                         verbose_name="event slug",
                     ),
                 ),
-                ("content", models.TextField(blank=True, verbose_name="description")),
+                ("content", models.TextField(blank=True,
+                                             verbose_name="description")),
                 (
                     "image",
                     models.ImageField(
@@ -55,11 +58,13 @@ class Migration(migrations.Migration):
                 ),
                 (
                     "date_finish",
-                    models.DateField(blank=True, null=True, verbose_name="date de fin"),
+                    models.DateField(blank=True, null=True,
+                                     verbose_name="date de fin"),
                 ),
                 (
                     "published_on",
-                    models.DateField(blank=True, null=True, verbose_name="publié le"),
+                    models.DateField(blank=True, null=True,
+                                     verbose_name="publié le"),
                 ),
                 (
                     "published",

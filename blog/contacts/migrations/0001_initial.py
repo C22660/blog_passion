@@ -40,8 +40,8 @@ class Migration(migrations.Migration):
                 (
                     "reason",
                     models.CharField(
-                        choices=[("CONTACT", "Contact"), ("BUG", "Remontée de bug")],
-                        max_length=15,
+                        choices=[("CONTACT", "Contact"),
+                                 ("BUG", "Remontée de bug")], max_length=15,
                     ),
                 ),
                 ("created_at", models.DateTimeField(auto_now_add=True)),

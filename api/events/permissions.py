@@ -1,6 +1,5 @@
 from rest_framework.permissions import BasePermission
 
-from blog.events.models import Event
 
 class EventAdministrationPermissions(BasePermission):
     """The articlevent creation or modification is limited to the admin or

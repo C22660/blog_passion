@@ -4,6 +4,7 @@ from django.core.mail import send_mail
 
 from blog.contacts.forms import CreationContactForm
 
+
 def send_contact_message(request):
     if request.method == 'POST':
         form = CreationContactForm(request.POST)
@@ -18,5 +19,4 @@ def send_contact_message(request):
             return render(request, 'contacts/confirmation_sending.html')
     else:
         form = CreationContactForm()
-    
     return render(request, 'contacts/contact_form.html', {'form': form})

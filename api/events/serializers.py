@@ -15,6 +15,5 @@ class EventDetailSerializer(ModelSerializer):
         # Normalement tous les champs par défaut, mais ajout de _all_ pour
         # être explicite.
         fields = '__all__'
-
-        # Contraierement aux articles, 
+        # Contraierement aux articles,
         # ici, on permet les évènements de même nom (ex sortie théatre)

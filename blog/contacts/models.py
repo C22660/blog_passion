@@ -1,17 +1,16 @@
 from datetime import datetime
 
 from django.db import models
-from django.conf import settings
 from django_extensions.db.fields import AutoSlugField
-from django.core.validators import MinValueValidator, MaxValueValidator
-from django.utils.text import slugify
 from django.utils.translation import gettext_lazy as _
+
 
 def slugify_with_date(self):
     """AutoSlugField can't be populated by created_at when contact is saved.
     We use here datetime.now().
     """
     return "{}-{}".format(self.contact_email, datetime.now())
+
 
 class Contact(models.Model):
     """A model for the contact message is not mandatory. But here, we could
@@ -30,7 +29,7 @@ class Contact(models.Model):
         unique=True,
     )
     content = models.TextField(_("message"), blank=False)
-    reason = models.CharField(_("motif"), max_length=15, choices = CHOICES)
+    reason = models.CharField(_("motif"), max_length=15, choices=CHOICES)
     created_at = models.DateTimeField(auto_now_add=True)
 
     class Meta:

@@ -27,6 +27,7 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name="article",
             name="published_on",
-            field=models.DateField(blank=True, null=True, verbose_name="publié le"),
+            field=models.DateField(blank=True, null=True,
+                                   verbose_name="publié le"),
         ),
     ]

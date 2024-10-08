@@ -22,7 +22,8 @@ class Migration(migrations.Migration):
                         verbose_name="ID",
                     ),
                 ),
-                ("title", models.CharField(max_length=200, verbose_name="titre")),
+                ("title", models.CharField(max_length=200,
+                                           verbose_name="titre")),
                 (
                     "slug",
                     django_extensions.db.fields.AutoSlugField(
@@ -33,7 +34,8 @@ class Migration(migrations.Migration):
                         verbose_name="article slug",
                     ),
                 ),
-                ("content", models.TextField(blank=True, verbose_name="contenu")),
+                ("content", models.TextField(blank=True,
+                                             verbose_name="contenu")),
                 (
                     "image",
                     models.ImageField(

@@ -1,12 +1,11 @@
 from django.db import models
 from django.conf import settings
 from django_extensions.db.fields import AutoSlugField
-from django.core.validators import MinValueValidator, MaxValueValidator
-from django.utils.text import slugify
 from django.utils.translation import gettext_lazy as _
 
 
 from PIL import Image
+
 
 class Article(models.Model):
     """Each article will be registered here.
@@ -32,8 +31,8 @@ class Article(models.Model):
         related_name="articles",
         verbose_name=_("auteur"),
     )
-    published_on = models.DateField(_("publié le"),blank=True, null=True)
-    published = models.BooleanField(_("publié"), default= False)
+    published_on = models.DateField(_("publié le"), blank=True, null=True)
+    published = models.BooleanField(_("publié"), default=False)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 

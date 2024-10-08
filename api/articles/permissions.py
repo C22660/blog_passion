@@ -1,6 +1,5 @@
 from rest_framework.permissions import BasePermission
 
-from blog.articles.models import Article
 
 class ArticleAdministrationPermissions(BasePermission):
     """The article creation or modification is limited to the admin or

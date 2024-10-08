@@ -1,12 +1,11 @@
 from django.db import models
 from django.conf import settings
 from django_extensions.db.fields import AutoSlugField
-from django.core.validators import MinValueValidator, MaxValueValidator
-from django.utils.text import slugify
 from django.utils.translation import gettext_lazy as _
 
 
 from PIL import Image
+
 
 class Event(models.Model):
     """Each event will be registered here.
@@ -42,8 +41,8 @@ class Event(models.Model):
         blank=True,
         null=True,
     )
-    published_on = models.DateField(_("publié le"),blank=True, null=True)
-    published = models.BooleanField(_("publié"), default= False)
+    published_on = models.DateField(_("publié le"), blank=True, null=True)
+    published = models.BooleanField(_("publié"), default=False)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
